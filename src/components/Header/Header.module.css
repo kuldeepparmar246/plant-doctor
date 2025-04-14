@@ -1,0 +1,15 @@
+.header {
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 3rem;
+  color: #2c3e50;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #34495e;
+  max-width: 700px;
+  margin: 0 auto;
+}
