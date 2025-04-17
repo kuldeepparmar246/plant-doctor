@@ -7,7 +7,7 @@ const LoginPage = (props) => {
   const { setUser } = props
   const [message, setMessage] = useState(null)
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container}`}>
       {message && <div className={styles.message}>{message}</div>}
       <div className={styles.box}>
         <h2 className={styles.title}>Farmer Login</h2>

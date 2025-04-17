@@ -56,7 +56,7 @@ const DetectForm = (props) => {
       {image && <img src={preview} />}
       <form onSubmit={handleSubmit} className={styles.form}>
       <input type="file" accept="image/*" onChange={handleImageChange} />
-      <button type="submit">Upload & Detect</button>
+      <button type="submit" >Upload & Detect</button>
       </form>
     </div>
   )

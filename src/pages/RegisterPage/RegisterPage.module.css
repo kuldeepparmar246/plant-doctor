@@ -38,3 +38,22 @@ a:hover, a:visited, a:link, a:active
   color: #2c3e50;
   text-align: center;
 }
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  form {
+    padding: 1.2rem;
+    width: 90%;
+  }
+
+  .input {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
+
