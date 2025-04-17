@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from './DetectForm.module.css'
 
+const baseUrl = import.meta.env.VITE_SERVER_URL || 'http://localhost:5000';
+
 const DetectForm = (props) => {
   const { setLoading, setResult } = props 
   const [image, setImage] = useState(null)
@@ -20,6 +22,7 @@ const DetectForm = (props) => {
   },[image])
 
   const handleImageChange = (e) => {
+    setResult(null)
     console.log(e.target.files[0])
     setImage(e.target.files[0])
   }
@@ -33,7 +36,7 @@ const DetectForm = (props) => {
     formData.append("file", image);
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/predict`, {
+      const response = await fetch(`${baseUrl}/predict`, {
         method: "POST",
         body: formData,
       })
