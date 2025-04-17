@@ -33,7 +33,7 @@ const DetectForm = (props) => {
     formData.append("file", image);
 
     try {
-      const response = await fetch("http://localhost:5000/predict", {
+      const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/predict`, {
         method: "POST",
         body: formData,
       })
