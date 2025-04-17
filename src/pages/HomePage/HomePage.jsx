@@ -6,14 +6,15 @@ import NavImage from "../../components/NavImage/NavImage";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
 import Footer from "../../components/Footer/Footer";
 
-const HomePage = () => {
+const HomePage = (props) => {
+  const { user, setUser } = props
   return (
     <div className={styles.container}>
-      <Header />
+      <Header user={user} setUser={setUser}/>
 
       <div className={styles.buttonWrapper}>
         <NavButton endpoint='/detect'>Get Started</NavButton>
-        <NavButton endpoint='/login'>Login</NavButton>
+        {!user && <NavButton endpoint='/login'>Login</NavButton>}
       </div>
 
       <NavImage src='../../potato-leaf.png' alt='Potato Leaf' />

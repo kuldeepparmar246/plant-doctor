@@ -15,31 +15,7 @@
   color: #2e7d32;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
 
-.form input[type="file"] {
-  font-size: 1rem;
-}
-
-.form button {
-  padding: 10px 20px;
-  background-color: #2e7d32;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.form button:hover {
-  background-color: #1b5e20;
-}
 
 .loadingText {
   color: #555;

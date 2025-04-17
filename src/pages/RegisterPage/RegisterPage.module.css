@@ -25,16 +25,16 @@
   color: #2c3e50;
 }
 
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
+
 .link {
   font-size: 18px;
   font-weight:lighter;
   margin-top: 25px;
   color: #2c3e50;
   text-align: center;
-}
-
-.message {
-  color: red;
-  font-size: 20px;
-  margin: 5px;
 }
