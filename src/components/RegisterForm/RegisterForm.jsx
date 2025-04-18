@@ -3,6 +3,8 @@ import axios from "axios";
 import styles from "./RegisterFrom.module.css";
 import { useNavigate } from "react-router-dom";
 
+const baseUrl = import.meta.env.VITE_APP_SERVER_URL || 'http://localhost:5000';
+
 const RegisterForm = () => {
   const [name, setName] = useState("");
   const [username, setUserName] = useState("");
@@ -20,7 +22,7 @@ const RegisterForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3001/api/users",
+        `${baseUrl}/api/users`,
         userObject
       );
       console.log(response.data);
