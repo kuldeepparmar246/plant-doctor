@@ -23,7 +23,7 @@ const LoginForm = (props) => {
       setUser(user)
       setPassword("")
       setUsername("")
-      navigate('/')
+      navigate('/home')
     } catch (error) {
       console.log("error while loging",error.message)
       setMessage(error.response.data.error)

@@ -5,17 +5,13 @@ import NavButton from "../../components/NavButton/NavButton";
 import NavImage from "../../components/NavImage/NavImage";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
 import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
 
 const HomePage = (props) => {
   const { user, setUser } = props
   return (
     <div className={styles.container}>
       <Header user={user} setUser={setUser}/>
-
-      <div className={styles.buttonWrapper}>
-        <NavButton endpoint='/detect'>Get Started</NavButton>
-        {!user && <NavButton endpoint='/login'>Login</NavButton>}
-      </div>
 
       <NavImage src='../../potato-leaf.png' alt='Potato Leaf' />
 
@@ -36,15 +32,11 @@ const HomePage = (props) => {
             title='Weather Forecasting'
             description='Plan irrigation and harvesting better with real-time weather updates tailored for farmers.'
           />
-          <ServiceCard 
-            title='Fertilizer Recommendation'
-            description='Receive AI-based fertilizer usage advice based on soil health and crop type.'
-          />
         </div>
       </section>
-      <Footer />
+      <Navbar />
     </div>
-  );
-};
+  )
+}
 
 export default HomePage

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from './DetectPage.module.css'
 import DetectForm from "../../components/DetectForm/DetectForm";
+import Navbar from "../../components/Navbar/Navbar";
 
 const DetectPage = () => {
   
@@ -13,6 +14,7 @@ const DetectPage = () => {
       <DetectForm  setLoading={setLoading} setResult={setResult} />
       {loading && <p className={styles.loadingText}>Detecting...</p>}
       {result && <p className={styles.resultText}>Result: {result.predicted_class_name}</p>}
+      <Navbar />
     </div>
   )
 }
