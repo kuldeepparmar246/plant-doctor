@@ -24,6 +24,14 @@
   background-color: #1b5e20;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
 /* Add responsiveness */
 @media (max-width: 600px) {
   .form {
@@ -39,11 +47,5 @@
     font-size: 0.95rem;
     padding: 10px;
   }
-
-  img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-  }
 }
+

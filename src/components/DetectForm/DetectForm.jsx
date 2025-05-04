@@ -53,7 +53,7 @@ const DetectForm = (props) => {
 
   return (
     <div>
-      {image && <img src={preview} />}
+      {image && <img  src={preview} />}
       <form onSubmit={handleSubmit} className={styles.form}>
       <input type="file" accept="image/*" onChange={handleImageChange} />
       <button type="submit" >Upload & Detect</button>

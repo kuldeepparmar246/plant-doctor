@@ -26,7 +26,7 @@ const RegisterForm = () => {
         userObject
       );
       console.log(response.data);
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       console.log("error while creating the user", error.message);
     }

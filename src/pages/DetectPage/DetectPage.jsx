@@ -14,7 +14,6 @@ const DetectPage = () => {
       <DetectForm  setLoading={setLoading} setResult={setResult} />
       {loading && <p className={styles.loadingText}>Detecting...</p>}
       {result && <p className={styles.resultText}>Result: {result.predicted_class_name}</p>}
-      <Navbar />
     </div>
   )
 }

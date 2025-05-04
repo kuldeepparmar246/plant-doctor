@@ -1,7 +1,8 @@
 import { Home,Camera, User,Cloud, LogOut } from "lucide-react";
 import styles from './Navbar.module.css'
 import { useNavigate } from "react-router-dom";
-const Navbar  = () => {
+const Navbar  = ({handleLogout}) => {
+  
   return (
     <nav>
       <div className={styles.navbar}>
@@ -9,17 +10,23 @@ const Navbar  = () => {
       <NavItem icon={<Camera/>} label="Scan" link="/detect"/>
       <NavItem icon={<Cloud/>} label="Weather" />
       <NavItem icon={<User/>} label="Profile" />
-      <NavItem icon={<LogOut />} label="" />
+      <NavItem icon={<LogOut />} label="Logout" handleLogout={handleLogout} link="/"/>
       </div>
     </nav>
   )
 }
 
-const NavItem = ({ icon, label,link }) => {
+const NavItem = (props) => {
+  const {icon,label,link,handleLogout} = props
   const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate(link)
+    if(handleLogout) handleLogout()
+  }
   
   return (
-    <button className={styles.item} onClick={() => navigate(link)}>
+    <button className={styles.item} onClick={handleClick}>
       <span className={styles.icon}>{icon}</span>
       <span className={styles.label}>{label}</span>
     </button>

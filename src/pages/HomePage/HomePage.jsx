@@ -34,7 +34,6 @@ const HomePage = (props) => {
           />
         </div>
       </section>
-      <Navbar />
     </div>
   )
 }
