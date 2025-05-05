@@ -1,6 +1,7 @@
 import { Home,Camera, User,Cloud, LogOut } from "lucide-react";
 import styles from './Navbar.module.css'
 import { useNavigate } from "react-router-dom";
+
 const Navbar  = ({handleLogout}) => {
   
   return (
@@ -8,9 +9,9 @@ const Navbar  = ({handleLogout}) => {
       <div className={styles.navbar}>
       <NavItem icon={<Home/>} label="Home" link="/home" />
       <NavItem icon={<Camera/>} label="Scan" link="/detect"/>
-      <NavItem icon={<Cloud/>} label="Weather" />
-      <NavItem icon={<User/>} label="Profile" />
-      <NavItem icon={<LogOut />} label="Logout" handleLogout={handleLogout} link="/"/>
+      <NavItem icon={<Cloud/>} label="Weather" link="/weather" />
+      <NavItem icon={<User/>} label="Profile" link="/profile" />
+      <NavItem icon={<LogOut />} label="Logout" handleLogout={handleLogout} link="/" />
       </div>
     </nav>
   )
