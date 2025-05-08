@@ -43,11 +43,61 @@ const WeatherPage = () => {
       {error && <p className={styles.error}>{error}</p>}
 
       {weather && (
-        <div className={styles.info}>
-          <h3>{weather.name}, {weather.sys.country}</h3>
-          <p>🌡 Temp: {weather.main.temp}°C</p>
-          <p>☁ Weather: {weather.weather[0].description}</p>
-          <p>💨 Wind Speed: {weather.wind.speed} m/s</p>
+        <div className={styles.weatherContainer}>
+          <table className={styles.weatherTable}>
+            <thead>
+              <tr>
+                <th colSpan="2">
+                  {weather.name}, {weather.sys.country}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Temperature</td>
+                <td>
+                  {weather.main.temp}°C (Feels like: {weather.main.feels_like}
+                  °C)
+                </td>
+              </tr>
+              <tr>
+                <td>Condition</td>
+                <td>{weather.weather[0].description}</td>
+              </tr>
+              <tr>
+                <td>Humidity</td>
+                <td>{weather.main.humidity}%</td>
+              </tr>
+              <tr>
+                <td>Wind Speed</td>
+                <td>{weather.wind.speed} m/s</td>
+              </tr>
+              <tr>
+                <td>Visibility</td>
+                <td>{weather.visibility / 1000} km</td>
+              </tr>
+              <tr>
+                <td>Sunrise</td>
+                <td>
+                  {new Date(weather.sys.sunrise * 1000).toLocaleTimeString()}
+                </td>
+              </tr>
+              <tr>
+                <td>Sunset</td>
+                <td>
+                  {new Date(weather.sys.sunset * 1000).toLocaleTimeString()}
+                </td>
+              </tr>
+              <tr>
+                <td>Recommendation</td>
+                <td>
+                  {weather.main.temp > 30
+                    ? "Consider irrigation and avoid midday fieldwork."
+                    : "Conditions are suitable for most crop activities."}
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       )}
     </div>
