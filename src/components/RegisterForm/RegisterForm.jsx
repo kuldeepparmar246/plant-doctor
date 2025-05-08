@@ -3,7 +3,7 @@ import axios from "axios";
 import styles from "./RegisterFrom.module.css";
 import { useNavigate } from "react-router-dom";
 
-const baseUrl =  'http://localhost:3001';
+const baseUrl =  import.meta.env.VITE_APP_SERVER_URL || 'http://localhost:3001';
 
 const RegisterForm = ({setMessage}) => {
 
