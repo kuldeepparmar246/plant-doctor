@@ -20,8 +20,9 @@ const WeatherPage = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ location: location }),
       })
-      if (!res.ok) throw new Error("Location not found");
+      
       const data = await res.json();
+      if (data.cod != 200) throw new Error("Location not found");
       setWeather(data);
     } catch (err) {
       setError(err.message);
