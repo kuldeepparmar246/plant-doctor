@@ -5,9 +5,6 @@ import Navbar from "../../components/Navbar/Navbar";
 import ReactMarkdown from "react-markdown";
 
 const DetectPage = () => {
-
-  
-
   const [geminiResponse, setGeminiResponse] = useState(null);
   const [result, setResult] = useState(null)
   const [loading, setLoading] = useState(false)
@@ -35,8 +32,8 @@ const DetectPage = () => {
   
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Detect Potato Disease</h1>
-      <DetectForm  setLoading={setLoading} setResult={setResult} />
+      <h1 className={styles.title}>Detect Disease</h1>
+      <DetectForm  setLoading={setLoading} setResult={setResult} setGeminiResponse={setGeminiResponse}/>
       {loading && <p className={styles.loadingText}>Detecting...</p>}
       {result && 
       <>
@@ -48,7 +45,7 @@ const DetectPage = () => {
         Get Treatment Advice
         </button>
       </>}
-    {geminiResponse && <div className={styles.adviceText}><ReactMarkdown >{geminiResponse}</ReactMarkdown></div>}
+      {geminiResponse && <div className={styles.adviceText}><ReactMarkdown >{geminiResponse}</ReactMarkdown></div>}
     </div>
   )
 }
