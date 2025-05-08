@@ -57,3 +57,8 @@ a:hover, a:visited, a:link, a:active
   }
 }
 
+.error {
+  color: red;
+  font-size: 18;
+}
+
